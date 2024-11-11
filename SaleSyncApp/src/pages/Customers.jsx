@@ -1,5 +1,9 @@
+import { useState } from "react";
+
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { Button } from "@mui/material";
+
+import AddClientModal from "../components/modals/AddClientModal";
 
 const data = {
   columns: [
@@ -51,12 +55,18 @@ const data = {
 };
 
 const Customers = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <div className="min-w-full">
       <div className=" flex justify-between">
         <div className="text-3xl font-bold mb-10">Clientes</div>
         <div>
-          <Button variant="contained">Agregar</Button>
+          <Button variant="contained" onClick={handleOpen}>
+            Agregar
+          </Button>
         </div>
       </div>
       <div className="w-full h-full">
@@ -68,6 +78,7 @@ const Customers = () => {
           className="w-full"
         />
       </div>
+      <AddClientModal handleClose={handleClose} open={open} />
     </div>
   );
 };

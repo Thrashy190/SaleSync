@@ -46,7 +46,7 @@ cd ../SaleSyncApi
 npm install
 ```
 
-### 3. Set up PostgreSQL:
+### 3. Set up PostgreSQL (not yet):
 
 1. Create a PostgreSQL database.
 2. Update the `.env` file in the backend folder with your PostgreSQL connection details:
